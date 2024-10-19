@@ -1,0 +1,41 @@
+services:
+  hotel-reservation-website:
+    container_name: hotel-reservation-website
+    image: dominikkielkowski/hotel-reservation:latest
+    build:
+      context: .
+      dockerfile: src/HotelReservationWebsite/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+  
+  hotelreservationdatabase:
+    container_name: hotel-reservation-database
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+  
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  angular-web-client:
+    container_name: angular-web-client
+    image: dominikkielkowski/hotel-reservation-web-client:production
+    ports:
+      - "4200:80"
