@@ -22,4 +22,8 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/dominik-kielkowski/hotel-reservation.git
-cd hotel-reservation
+
+Navigate to the directory containing docker-compose.yml
+
+docker-compose up --build
+
