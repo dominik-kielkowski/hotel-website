@@ -20,9 +20,9 @@ Ensure you have the following installed:
 
 ## Clone the Repository
 
-Clone the repository to your local machine:
 
 ```bash
+# Clone the repository to your local machine:
 git clone https://github.com/dominik-kielkowski/hotel-reservation.git
 
 # Navigate to the directory containing docker-compose.yml
