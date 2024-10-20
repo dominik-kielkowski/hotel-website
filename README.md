@@ -9,3 +9,17 @@ The backend uses Redis Cache in the MediatR pipeline to speed up queries and imp
 - [Hotel Reservation Web Client](https://github.com/dominik-kielkowski/hotel-reservation-web-client)
 - [Hotel Reservation API](https://github.com/dominik-kielkowski/hotel-reservation-api)
 - [Hotel Reservation Email Service](https://github.com/dominik-kielkowski/hotel-reservation-email-service)
+
+## Prerequisites
+
+Ensure you have the following installed:
+
+- **Docker**: Download and install from [Docker's official website](https://www.docker.com/products/docker-desktop).
+
+## Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/dominik-kielkowski/hotel-reservation.git
+cd hotel-reservation
