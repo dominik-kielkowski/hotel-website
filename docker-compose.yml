@@ -1,16 +1,13 @@
 services:
-  hotel-reservation-website:
-    container_name: hotel-reservation-website
-    image: dominikkielkowski/hotel-reservation:latest
-    build:
-      context: .
-      dockerfile: src/HotelReservationWebsite/Dockerfile
+  hotelreservationwebsite:
+    container_name: hotelreservationwebsite
+    image: dominikkielkowski/hotel-reservation-api:latest
     ports:
       - "5000:5000"
       - "5001:5001"
-  
+
   hotelreservationdatabase:
-    container_name: hotel-reservation-database
+    container_name: hotelreservationdatabase
     image: mcr.microsoft.com/mssql/server:2017-latest
     environment:
       - SA_PASSWORD=YourStrong@Passw0rd
@@ -23,7 +20,7 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
-  
+
   rabbitmq:
     container_name: rabbitmq
     image: rabbitmq:management-alpine
@@ -36,6 +33,6 @@ services:
 
   angular-web-client:
     container_name: angular-web-client
-    image: dominikkielkowski/hotel-reservation-web-client:production
+    image: dominikkielkowski/hotel-reservation-web-client:development
     ports:
       - "4200:80"
